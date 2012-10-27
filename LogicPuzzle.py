@@ -35,9 +35,10 @@ def logic_puzzle():
     "Return a list of the names of the people, in the order they arrive."
     days = range(2, 7)
     names = ['Wilkes', 'Hamming', 'Minsky', 'Knuth', 'Simon']
+    (Monday, Tuesday, Wednesday, Thursday, Friday) = days
     orderings = list(itertools.permutations(days))
     return next([name for (day, name) in sorted(zip((Wilkes, Hamming, Minsky, Knuth, Simon), names))]
-                for (Monday, Tuesday, Wednesday, Thursday, Friday) in orderings
+                # for (Monday, Tuesday, Wednesday, Thursday, Friday) in orderings
                 for (Laptop, Droid, Tablet, iPhone, DEVICE) in orderings
                 if Wednesday is Laptop and
                 Friday is not Tablet and
